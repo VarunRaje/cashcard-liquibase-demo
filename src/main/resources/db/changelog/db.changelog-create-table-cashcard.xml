@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--Added the entity Car-->
+    <changeSet id="20240106-1" author="Varun Deshpande">
+        <createTable tableName="cash_card">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="cash_card_id_pk" />
+            </column>
+            <column name="amount" type="bigint">
+                <constraints nullable="false" notNullConstraintName="amount_not_nnull"/>
+            </column>
+        </createTable>
+        <addAutoIncrement tableName="cash_card" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1"/>
+    </changeSet>
+</databaseChangeLog>
